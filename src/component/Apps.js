@@ -127,7 +127,7 @@ function Apps() {
               name="input"
               value={input}
               onChange={applyChange}
-              sx={{}}
+              autoComplete="off"
             />
             <Button
               type="submit"
