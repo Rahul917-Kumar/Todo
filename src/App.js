@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import "./App.css"
+/* import "./App.css"
 import TextField from "@mui/material/TextField";
 import Button from "@mui/material/Button";
 import {db} from "./firebase_config"
@@ -7,10 +7,21 @@ import {db} from "./firebase_config"
 import {collection , addDoc , getDocs ,  updateDoc, doc , deleteDoc } from 'firebase/firestore'
 import firebase from "firebase/compat/app";
 import "firebase/compat/firestore";
-import Todo from "./Todo";
+import Todo from "./Todo"; */
+import Apps from "./component/Apps";
 
 function App() {
-    const [allTask , setAllTask] = useState([])
+    return(
+        <div>
+           <Apps/> 
+        </div>
+    )
+}
+export default App;
+
+
+//function App() {
+   /*  const [allTask , setAllTask] = useState([])
     const serverStamp = firebase.firestore.Timestamp;
 
     const todoCollection = collection(db, "todos");
@@ -19,11 +30,11 @@ function App() {
     
     const applyChange = (e)=>{
         setInput(e.target.value)
-    }
+    } */
 
   /*function to get data from the firebase as soon page will rerender*/  
 
-    const getTodo = async () => {
+   /*  const getTodo = async () => {
     
       const data = await getDocs(todoCollection);
       setAllTask([
@@ -33,13 +44,13 @@ function App() {
         })),
       ]);
       console.log(allTask)
-    };
+    }; */
 
 
     /*function to update document in the firestore */
 
 
-    const updateProgress = async( id, data , inprogress , timestamp  )=>{
+    /* const updateProgress = async( id, data , inprogress , timestamp  )=>{
         const todoDoc = doc(db, "todos", id);
         await updateDoc(todoDoc , {
             inprogress:!inprogress
@@ -62,11 +73,11 @@ function App() {
 
         setAllTask([...newTask])
         
-    }
+    } */
 
     /* function to push new Data to collection */
 
-    const pushToDo = async (e) => {
+   /*  const pushToDo = async (e) => {
       e.preventDefault();
 
       await addDoc(todoCollection, {
@@ -83,11 +94,11 @@ function App() {
     ]);
       
       setInput("");
-    };
+    }; */
 
     /* function to delete a document */
 
-    const deleteTodo = async(id)=>{
+    /* const deleteTodo = async(id)=>{
         const todo  = doc(db , "todos" , id)
         await deleteDoc(todo)
         const newTask = allTask.filter((data)=>data.id!==id)
@@ -99,9 +110,9 @@ function App() {
     useEffect(()=>{
         console.log("useEffect")
         getTodo()
-    },[])
+    },[]) */
 
-    
+  /*   
   return (
     <div>
       <div
@@ -139,5 +150,4 @@ function App() {
     </div>
   );
 }
-
-export default App;
+ */
